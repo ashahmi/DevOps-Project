@@ -1,0 +1,7 @@
+version: '3.8'
+
+services:
+  web:
+    image: your-dockerhub-username/your-image-name:tag
+    ports:
+      - "80:80"
