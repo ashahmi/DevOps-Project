@@ -284,3 +284,27 @@ Make sure to have **Docker dekstop** installed
 **Amir:**
 
 1. Merge pull request
+
+# 4. AWS Deployment
+
+Make sure **AWS EC2** is set up, and that **Docker** and **Git** are also installed on it.
+
+**Aqif:**
+1. SSH into AWS EC2 instance: ```ssh -i devops.kp.pem ec2-user@52.90.86.85```
+2. Clone repository to /home/ec2-user/git/Devops-Project: ```git clone https://github.com/ashahmi/DevOps-Project```
+3. Build and run Docker image:
+   ```
+   docker build -t index-page .
+   docker run -d -p 80:80 --name Top5Foods index-page
+   ```
+4. Verify by accessing app on web browser:
+   [Top 5 Foods](http://52.90.86.85/)
+
+# 5. Documentation & Monitoring
+
+**Iman:**
+
+1. Run Prometheus: ```docker run -d -p 9090:9090 prom/prometheus```
+2. Run grafana: ```docker run -d -p 3000:3000 grafana/grafana```
+3. Access Grafana at [Grafana](http://52.90.86.85:3000/)
+4. Add Prometheus as data source
